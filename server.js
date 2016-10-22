@@ -1,3 +1,3 @@
-require('./app').listen(3001,'localhost',function(){
-    console.log('Express listening started on localhost/3001');
+require('./app').listen(3002,'localhost',function(){
+    console.log('Express listening started on localhost/3002');
 });
