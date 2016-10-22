@@ -18,7 +18,7 @@ router.get('/list',function(req,res){
 		return res.status(404);
     }
     if (typeof req.query.content !== 'undefined') {
-        data.client_id = req.query.client_id;
+        data.content = req.query.content;
     }else{
 		return res.status(404);
     }
@@ -30,6 +30,29 @@ router.get('/list',function(req,res){
 		res.status(200);
 		return res.send(response);
 	}).catch(function(err){
+		var response={};
+		if(err.code==='INPUT')
+		{
+			res.status(400);
+			response.message ='400 BAD REQUEST.';
+		}else if(err.code==='DB'){
+			res.status(500);
+			response.message ='500 INTERNAL SERVER ERROR. ' + err.msg;
+		}
+		return res.send(response);
+	});
+});
+
+router.get('/listIMDB', function(req,res){
+	var data = {};
+	if (typeof req.query.content !== 'undefined') {
+        data = req.query.client_id;
+    }else{
+		return res.status(404);
+    }
+    query_controller.listImdb(data).then(function(data2){
+
+    }).catch(function(err){
 		var response={};
 		if(err.code==='INPUT')
 		{
