@@ -1,7 +1,11 @@
 var env = require('../env');
 var imdb_vendor = require('../libraries/imdb_vendor');
+var dym = require('didyoumean');
+
+
 module.exports = {
 	listResult: function(data){
+		return new Promise(function(fulfill,reject){
 
 	},
 	listImdb: function(data){

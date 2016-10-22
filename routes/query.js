@@ -7,18 +7,8 @@ var query_controller = require('../controllers/query');
 
 router.get('/list',function(req,res){
 	var data = {};
-	if (typeof req.query.page !== 'undefined') {
-        data.page = parseInt(req.query.page);
-    }else{
-		return res.status(404);
-    }
-	if (typeof req.query.size !== 'undefined') {
-        data.size = parseInt(req.query.size);
-    }else{
-		return res.status(404);
-    }
-    if (typeof req.query.content !== 'undefined') {
-    	data.content = req.query.content;
+	if (typeof req.query.content !== 'undefined') {
+    	data = req.query.content;
     }else{
 		return res.status(404);
     }
