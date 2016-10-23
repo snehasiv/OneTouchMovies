@@ -66,6 +66,7 @@ router.get('/list',function(req,res){
 });
 
 router.get('/listIMDB', function(req,res){
+	console.log('listimdb called');
 	var data = {};
 	if (typeof req.query.content !== 'undefined') {
         data = req.query.content;
