@@ -9,6 +9,7 @@ module.exports.getViaConveyor = function(data)
 	return request({
 		uri:  env.imdb_vendor,
 		qs: {
+			tomatoes: true,
 			t: data
 		},
 		json: true
