@@ -7,7 +7,13 @@ var query_controller = require('../controllers/query');
 var app = express();
 var path = require('path');
 
-// viewed at http://localhost:8080
+
+router.get('/', (req, res) => {
+   res.sendFile('index.html', {
+     root: '/home/snehasiv/Desktop/LNMHacks/OneTouchMovies/public'
+   });
+});
+
 router.get('/downloadlink', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
     var data = {};

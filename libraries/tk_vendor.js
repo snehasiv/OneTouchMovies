@@ -11,6 +11,8 @@ module.exports.getViaConveyor = function(data)
 		qs: {
 			k: '245482-OneTouch-Q3FB3B2A',
 			q: data
+			//type: movies,
+			//info: 1
 		},
 		json: true
 

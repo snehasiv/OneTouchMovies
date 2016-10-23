@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+	<title>All about MOVIES!</title>
+</head>
+ <!-- <script src="controllers/query.js.js"></script> -->
+<body>
+
+	<form>
+		<input type="text" id="formValueId" name="valueId">
+		<!-- <button onclick="httpGetAsync" type=submit>Search</button> -->
+	</form>
+	
+	<script>
+		var xhr1 = new XMLHttpRequest();
+		xhr1.open('GET', "/listIMDB", true);
+		xhr.send();
+		xhr.addEventListener("readystatechange", processRequest, false);
+
+
+		function processRequest(e) {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+        		var response = JSON.parse(xhr.responseText);
+        		alert(response.message);
+
+    		}
+		}
+	</script>
+<!--  <script>
+ 	function httpGetAsync(theUrl, callback)
+	{
+    	var xmlHttp = new XMLHttpRequest();
+    	xmlHttp.onreadystatechange = function() { 
+        	if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            	callback(xmlHttp.responseText);
+    	}
+    	xmlHttp.open("GET", "//listIMDB", true); // true for asynchronous 
+    	xmlHttp.send(null);
+	}
+</script>	 -->
+</body>
+</html>
