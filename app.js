@@ -12,6 +12,12 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 app.use('/',require('./routes/query'));
 
+app.get('/', (req, res) => {
+   res.sendFile('index.html', {
+     root: path.join(__dirname,'public')
+   });
+});
+
 app.use(function(req, res, next) {
 	var err = new Error('Not Found');
 	err.status = 404;

@@ -8,12 +8,6 @@ var app = express();
 var path = require('path');
 
 
-router.get('/', (req, res) => {
-   res.sendFile('index.html', {
-     root: '/home/snehasiv/Desktop/LNMHacks/OneTouchMovies/public'
-   });
-});
-
 router.get('/downloadlink', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
     var data = {};
