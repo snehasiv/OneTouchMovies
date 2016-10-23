@@ -2,10 +2,7 @@ var env = require('../env');
 var cheerio = require('cheerio');
 var request = require('request');
 var imdb_vendor = require('../libraries/imdb_vendor');
-<<<<<<< HEAD
 var tk_vendor = require('../libraries/tk_vendor');
-=======
->>>>>>> 34e5a2d6fc122eef2f8918904d0f6ce8918171a1
 
 module.exports = {
     listResult: function(data){
@@ -32,11 +29,6 @@ module.exports = {
                     {
                       if(text.includes(result[i]))
                       {
-
-<<<<<<< HEAD
-	}),
-
-=======
                         count = count + 1;
                         if(count == result.length)
                         {
@@ -55,8 +47,7 @@ module.exports = {
         return fulfill(result_url); 
         });
     },
-    
->>>>>>> 34e5a2d6fc122eef2f8918904d0f6ce8918171a1
+
 	listImdb: function(data){
 		return new Promise(function(fulfill,reject){
 			imdb_vendor.getViaConveyor(data).then(function(response){
